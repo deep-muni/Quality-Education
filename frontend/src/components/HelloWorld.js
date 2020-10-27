@@ -1,10 +1,12 @@
 import React from 'react';
 import '../css/HelloWorld.css';
+import Header from './Header';
+
 
 const HelloWorld = () => {
     return (
-        <div className="helloworld">
-            Hello World
+        <div>
+            <Header/>
         </div>
     );
 };
