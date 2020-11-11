@@ -16,18 +16,18 @@ const getProfile = (req,res, next) => {
     //   }
 }
 
-const updateProfile = (req, res,next) => {
+const updateProfile =  async (req, res,next) => {
     console.log("updating profile")
     try {
-      let email_id = req.params.emailid;
-      let user = User.findOne({where: {
-        email: req.body.email_id
+      let email_id = req.body.emailid;
+      let user = await User.findOne({where: {
+        email: email_id
       }});
   
       if (user === null) {
         res.send("fail");
       } else {
-        user = User.update(
+        user = await User.update(
           {
             where: {
               email: email_id,
@@ -44,7 +44,33 @@ const updateProfile = (req, res,next) => {
     }
   }
 
+  const deleteProfile = async (req,res,next) => {
+      console.log("deleting profile");
+      try{
+          let email_id = req.body.emailid;
+          let user = await User.findOne({
+              where: {email:email_id}
+          });
+
+          if(user === null){
+              res.send("fail");
+          }else{
+              user = await User.deleteOne({
+                  where :{
+                      email : email_id
+                  }}
+              ).then(()=>{
+                  console.log("profile deleted");
+              });
+            res.status(200);
+            res.send("success");
+          }
+      } catch (error){
+          next(error);
+      }
+  }
   module.exports.updateProfile = updateProfile;
   module.exports.getProfile = getProfile;
+  module.exports.deleteProfile = deleteProfile;
 
 
