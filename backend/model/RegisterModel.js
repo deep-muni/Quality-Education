@@ -23,10 +23,14 @@ const UserSchema = new Schema({
         required: true
     },
     //student or instructor
-    type: {
+    profiletype: {
+        type: String,
+        required: true
+    },
+    gender: {
         type: String,
         required: true
     }
-}); 
+});
 let User = mongoose.model("users", UserSchema);
 module.exports = User;
