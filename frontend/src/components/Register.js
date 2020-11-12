@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import '../css/Register.css';
 import validate from "../helper/validation";
-import {AxiosInstance as axios} from "axios";
+import Axios from "axios";
 
 const Register = () => {
 
@@ -14,7 +14,7 @@ const Register = () => {
         setErrors(validate(input, initial));
     }, [input, initial])
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         if (initial) {
             setResult("Fill the form");
@@ -29,8 +29,9 @@ const Register = () => {
                     password: input.password
                 }
 
-                axios.post("http://localhost:5000/register", User)
+                await Axios.post("http://localhost:5000/user/register", User)
                     .then(res => {
+                        console.log(res);
                         if (res.data.status) {
                             setResult("User has been registered");
                         } else {
