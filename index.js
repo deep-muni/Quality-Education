@@ -1,38 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const mongoose = require("mongoose");
 const app = express();
-const registerRouter = require("./backend/route/RegisterRoute");
-const loginRouter = require("./backend/route/LoginRoute");
-app.use(cors());
 
+const userRoute = require('./backend/route/UserRoute');
+const db = require('./backend/db/connection');
+
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-
-app.use(express.json());
-app.use('/register', registerRouter);
-app.use('/login', loginRouter);
-
-
-//mongodb connection string 
-const db = require("./config/keys").mongoURI;
-
-mongoose
-    .connect(
-        db,
-        {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        }
-    )
-    .then(() => console.log("MongoDB successfully connected"))
-    .catch(err => console.log(err));
 
 app.get('/', function (req, res) {
     res.status(200).send("OK");
 });
+
+app.use('/user', userRoute);
 
 app.listen(process.env.PORT || 5000, function () {
     console.log('Express server running on port 5000');

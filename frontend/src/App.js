@@ -1,15 +1,12 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
-import HelloWorld from "./components/HelloWorld";
+import Register from "./components/Register";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={HelloWorld} />
-      </Switch>
-    </BrowserRouter>
+    <div className="app">
+      <Register/>
+    </div>
   );
 }
 
