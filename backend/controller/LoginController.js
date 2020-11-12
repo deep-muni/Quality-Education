@@ -12,7 +12,7 @@ const login = (req, res, next) => {
         bcrypt.compare(req.body.password, user.password, (err, result) => {
             if (err) return status(400).json("Incorrect Password");
             if (result) return res.status(200).json(user);
-            else return res.status(400).json("Incorrect Password");
+            return res.status(400).json("Incorrect Password");
         });
     });
 }
