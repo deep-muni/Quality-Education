@@ -1,3 +1,107 @@
-.register{
-    color: red;
+.register {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: transparent;
+    padding: 20px;
+    font-family: Arial, serif;
+    border-radius: 10px;
+    position: relative;
+    transform: translate(0);
+    transition: 2s tranform linear;
+}
+
+.register__input-section {
+    position: relative;
+    padding: 7px 0;
+}
+
+.register label {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    color: #000000;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.register__inp {
+    margin: 10px 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 10px;
+    height: 32px;
+    font-size: 20px;
+    border-radius: 2px;
+    outline: none;
+    background-color: #ffffff;
+    border: 1px solid #8f8f8f;
+    transition: 0.2s border linear;
+}
+
+.register__inp:hover {
+    border: 1px solid #000000;
+}
+
+.register__inp:focus {
+    border-color: #142850;
+}
+
+.register__submit {
+    width: 100%;
+    margin-top: 15px;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 25px;
+    background-color: #0073b1;
+    color: #ffffff;
+    border: 1px solid #0073b1;
+}
+
+.register__submit:active {
+    transform: translate(1px, 1px);
+}
+
+.register__submit:focus {
+    border: 1px solid #0073b1;
+    box-shadow: none;
+}
+
+.register__submit:hover {
+    cursor: pointer;
+    background-color: #006097;
+    border: 1px solid #006097;
+    color: #ffffff;
+}
+
+.register__redirect {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.register__linkLogin {
+    text-decoration: underline;
+    color: #0073b1;
+}
+
+.register__linkLogin:hover {
+    text-decoration: underline;
+    color: #006097;
+}
+
+.register__error {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 13px;
+    color: #ff0000;
+}
+
+.register__mainError {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 13px;
+    color: #ff0000;
 }

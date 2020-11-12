@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import HelloWorld from "./components/HelloWorld";
+import Register from "./components/Register";
 
 function App() {
   return (
     <div className="app">
-      <HelloWorld/>
+      <Register/>
     </div>
   );
 }
