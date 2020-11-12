@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require("mongoose");
 const app = express();
-const registerRouter = require('./backend/route/RegisterRoute');
+const registerRouter = require("./backend/route/RegisterRoute");
+const loginRouter = require("./backend/route/LoginRoute");
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -12,6 +13,7 @@ app.use(bodyParser.json());
 
 app.use(express.json());
 app.use('/register', registerRouter);
+app.use('/login', loginRouter);
 
 
 //mongodb connection string 
