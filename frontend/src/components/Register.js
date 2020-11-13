@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import '../css/Register.css';
+import '../css/Form.css';
 import validate from "../helper/validation";
 import Axios from "axios";
 
@@ -11,7 +11,7 @@ const Register = () => {
     const [result, setResult] = useState('');
 
     useEffect(() => {
-        setErrors(validate(input, initial));
+        setErrors(validate(input, initial, 'register'));
     }, [input, initial])
 
     const handleSubmit = async (event) => {
@@ -31,7 +31,6 @@ const Register = () => {
 
                 await Axios.post("http://localhost:5000/user/register", User)
                     .then(res => {
-                        console.log(res);
                         if (res.data.status) {
                             setResult("User has been registered");
                         } else {
@@ -56,7 +55,7 @@ const Register = () => {
         <div className="register">
             <form className="register__form" onSubmit={handleSubmit}>
                 <div className="register__input-section">
-                    <label htmlFor="email">User Name</label>
+                    <label htmlFor="email">Email</label>
                     <input type="text" name="email" className="register__inp"
                            onChange={handleChange} value={input.email || ''}/>
                     {errors.email && (<p className={"register__error"}>{errors.email}</p>)}
@@ -103,7 +102,7 @@ const Register = () => {
             </form>
             <div className="register__redirect">
                 <span>Already a User? </span>
-                <a href="http://localhost" className="register__linkLogin"> Login</a>
+                <a href="http://localhost" className="register__link"> Login</a>
             </div>
         </div>
     );

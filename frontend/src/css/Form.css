@@ -1,4 +1,4 @@
-.register {
+.register, .login {
     max-width: 400px;
     margin: 0 auto;
     background-color: transparent;
@@ -10,12 +10,12 @@
     transition: 2s tranform linear;
 }
 
-.register__input-section {
+.register__input-section, .login__input-section {
     position: relative;
     padding: 7px 0;
 }
 
-.register label {
+.register label, .login label {
     position: absolute;
     top: -5px;
     left: 0;
@@ -24,7 +24,7 @@
     font-style: italic;
 }
 
-.register__inp {
+.register__inp, .login__inp {
     margin: 10px 0;
     box-sizing: border-box;
     width: 100%;
@@ -38,15 +38,15 @@
     transition: 0.2s border linear;
 }
 
-.register__inp:hover {
+.register__inp:hover, .login__inp:hover {
     border: 1px solid #000000;
 }
 
-.register__inp:focus {
+.register__inp:focus, .login__inp:focus {
     border-color: #142850;
 }
 
-.register__submit {
+.register__submit, .login__submit {
     width: 100%;
     margin-top: 15px;
     height: 50px;
@@ -58,39 +58,39 @@
     border: 1px solid #0073b1;
 }
 
-.register__submit:active {
+.register__submit:active, .login__submit:active {
     transform: translate(1px, 1px);
 }
 
-.register__submit:focus {
+.register__submit:focus, .login__submit:focus {
     border: 1px solid #0073b1;
     box-shadow: none;
 }
 
-.register__submit:hover {
+.register__submit:hover, .login__submit:hover {
     cursor: pointer;
     background-color: #006097;
     border: 1px solid #006097;
     color: #ffffff;
 }
 
-.register__redirect {
+.register__redirect, .login__redirect {
     text-align: center;
     margin-top: 20px;
     font-size: 20px;
 }
 
-.register__linkLogin {
+.register__link, .login__link {
     text-decoration: underline;
     color: #0073b1;
 }
 
-.register__linkLogin:hover {
+.register__linkLogin:hover, .login__link:hover {
     text-decoration: underline;
     color: #006097;
 }
 
-.register__error {
+.register__error, .login__error {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -98,7 +98,7 @@
     color: #ff0000;
 }
 
-.register__mainError {
+.register__mainError, .login__mainError {
     position: absolute;
     top: 0;
     left: 0;

@@ -1,13 +1,22 @@
 import React from 'react';
 import './App.css';
-import Register from "./components/Register";
+import {BrowserRouter as Router} from "react-router-dom";
+import Routes from "./components/Routes";
+import Navigation from "./components/Navigation";
+
 
 function App() {
-  return (
-    <div className="app">
-      <Register/>
-    </div>
-  );
+
+    return (
+        <div className="app">
+            <Router>
+                <div className="App">
+                    <Navigation/>
+                    <Routes/>
+                </div>
+            </Router>
+        </div>
+    );
 }
 
 export default App;

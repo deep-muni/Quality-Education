@@ -32,4 +32,27 @@ const register = (req, res) => {
         });
 }
 
+const login = (req, res) => {
+    User.findOne({email: req.body.email}).exec()
+        .then(user => {
+            if(user){
+                if(validPassword(req.body.password, user.password)) {
+                    res.send({status: true, message: "Success"});
+                }else{
+                    res.send({status: false, message: "Invalid Credentials"});
+                }
+            }else{
+                res.send({status: false, message: "Invalid Credentials"});
+            }
+        })
+        .catch(err => {
+            res.send({status: null, message: err});
+        })
+}
+
+const validPassword = (pass, password) => {
+    return bcrypt.compareSync(pass, password);
+}
+
 module.exports.register = register;
+module.exports.login = login;
