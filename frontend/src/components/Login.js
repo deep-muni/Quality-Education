@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import '../css/Form.css';
 import validate from "../helper/validation";
 import Axios from "axios";
+import urlModifier from "../helper/urlModifier";
 
 const Login = () => {
 
@@ -26,7 +27,7 @@ const Login = () => {
                     password: input.password
                 }
 
-                await Axios.post("http://localhost:5000/user/login", User)
+                await Axios.post(urlModifier() + "user/login", User)
                     .then(res => {
                         if (res.data.status) {
                             setResult("User login successful");

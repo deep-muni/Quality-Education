@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import '../css/Form.css';
 import validate from "../helper/validation";
 import Axios from "axios";
+import urlModifier from "../helper/urlModifier";
 
 const Register = () => {
 
@@ -29,7 +30,7 @@ const Register = () => {
                     password: input.password
                 }
 
-                await Axios.post("http://localhost:5000/user/register", User)
+                await Axios.post(urlModifier() + "user/register", User)
                     .then(res => {
                         if (res.data.status) {
                             setResult("User has been registered");
