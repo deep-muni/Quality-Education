@@ -1,10 +1,77 @@
-import React from 'react';
-import '../css/Login.css';
+import React, {useEffect, useState} from 'react';
+import '../css/Form.css';
+import validate from "../helper/validation";
+import Axios from "axios";
 
 const Login = () => {
+
+    const [input, setInput] = useState({});
+    const [errors, setErrors] = useState({});
+    const [initial, setInitial] = useState(true);
+    const [result, setResult] = useState('');
+
+    useEffect(() => {
+        setErrors(validate(input, initial, 'login'));
+    }, [input, initial])
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        if (initial) {
+            setResult("Fill the form");
+        } else {
+            if(Object.keys(errors).length === 0){
+                setResult("");
+                const User = {
+                    email: input.email,
+                    password: input.password
+                }
+
+                await Axios.post("http://localhost:5000/user/login", User)
+                    .then(res => {
+                        if (res.data.status) {
+                            setResult("User login successful");
+                        } else {
+                            setResult("Invalid Credentials");
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+            }else{
+                setResult("Errors in form");
+            }
+        }
+    };
+
+    const handleChange = (event) => {
+        setInput(input => ({...input, [event.target.name]: event.target.value}));
+        setInitial(false);
+    }
+
     return (
         <div className="login">
-            Login
+            <form className="login__form" onSubmit={handleSubmit}>
+                <div className="login__input-section">
+                    <label htmlFor="email">Email</label>
+                    <input type="text" name="email" className="login__inp"
+                           onChange={handleChange} value={input.email || ''}/>
+                    {errors.email && (<p className={"login__error"}>{errors.email}</p>)}
+                </div>
+                <div className="login__input-section">
+                    <label htmlFor="password">Password</label>
+                    <input type="password" name="password" className="login__inp"
+                           onChange={handleChange} value={input.password || ''}/>
+                    {errors.password && (<p className={"login__error"}>{errors.password}</p>)}
+                </div>
+                <div className="login__input-section">
+                    {(<p className={"login__mainError"}>{result}</p>)}
+                    <button type="submit" className="login__submit">Login</button>
+                </div>
+            </form>
+            <div className="login__redirect">
+                <span>Do not have an account? </span>
+                <a href="http://localhost" className="login__link"> Register</a>
+            </div>
         </div>
     );
 };
