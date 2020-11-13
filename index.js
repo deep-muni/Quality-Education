@@ -4,6 +4,7 @@ const cors = require('cors');
 const app = express();
 
 const userRoute = require('./backend/route/UserRoute');
+const adminRoute = require('./backend/route/adminRoute');
 const db = require('./backend/db/connection');
 
 app.use(cors());
@@ -15,6 +16,7 @@ app.get('/', function (req, res) {
 });
 
 app.use('/user', userRoute);
+app.use('/admin', adminRoute);
 
 app.listen(process.env.PORT || 5000, function () {
     console.log('Express server running on port 5000');
