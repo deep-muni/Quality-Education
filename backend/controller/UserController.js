@@ -2,20 +2,20 @@ const User = require("../model/UserModel");
 const bcrypt = require('bcrypt');
 
 const register = (req, res) => {
-    User.findOne({ email: req.body.email })
+    User.findOne({email: req.body.email})
         .then(data => {
             if (data) {
-                res.send({ status: false, message: "User Already Exist" });
+                res.send({status: false, message: "User Already Exist"});
             } else {
                 const newUser = new User({
                     email: req.body.email,
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,
+                    gender: req.body.gender,
                     dateOfBirth: req.body.dateOfBirth,
+                    userType: req.body.userType,
                     password: req.body.password
                     // education: req.body.education,
-                    // profiletype: req.body.profiletype,
-                    // gender: req.body.gender,
                     // country: req.body.country,
                     // address: req.body.address,
                     // subject: req.body.subject
@@ -25,7 +25,7 @@ const register = (req, res) => {
                         newUser.password = encrypt;
                         newUser.save()
                             .then(data => {
-                                res.json({ status: true, message: "User Added" })
+                                res.json({status: true, message: "User Added"})
                             })
                             .catch(error => console.log(error));
                     });
@@ -33,19 +33,19 @@ const register = (req, res) => {
             }
         })
         .catch(err => {
-            res.send({ status: null, message: err });
+            res.send({status: null, message: err});
         });
 }
 
 const getProfile = async (req, res, next) => {
     console.log("get profile.")
     try {
-        User.findOne({ email: req.body.email }).then(user => {
+        User.findOne({email: req.body.email}).then(user => {
             console.log(user);
             if (user) {
                 return res.json(user);
             }
-            return res.status(400).send({ "error": "user not found" });
+            return res.status(400).send({"error": "user not found"});
         });
     } catch (error) {
         next(error);
@@ -103,17 +103,17 @@ const deleteProfile = async (req, res, next) => {
     try {
         let email_id = req.body.emailid;
         let user = await User.findOne({
-            where: { email: email_id }
+            where: {email: email_id}
         });
 
         if (user === null) {
             res.send("fail");
         } else {
             user = await User.deleteOne({
-                where: {
-                    email: email_id
+                    where: {
+                        email: email_id
+                    }
                 }
-            }
             ).then(() => {
                 console.log("profile deleted");
             });
@@ -126,20 +126,21 @@ const deleteProfile = async (req, res, next) => {
 }
 
 const login = (req, res) => {
-    User.findOne({ email: req.body.email }).exec()
+    User.findOne({email: req.body.email}).exec()
         .then(user => {
             if (user) {
                 if (validPassword(req.body.password, user.password)) {
-                    res.send({ status: true, message: "Success" });
+                    const fullName = user.firstName + " " + user.lastName;
+                    res.send({status: true, message: "Success", userType: user.userType, email: user.email, fullName: fullName});
                 } else {
-                    res.send({ status: false, message: "Invalid Credentials" });
+                    res.send({status: false, message: "Invalid Credentials"});
                 }
             } else {
-                res.send({ status: false, message: "Invalid Credentials" });
+                res.send({status: false, message: "Invalid Credentials"});
             }
         })
         .catch(err => {
-            res.send({ status: null, message: err });
+            res.send({status: null, message: err});
         })
 }
 

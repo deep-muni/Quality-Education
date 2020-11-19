@@ -18,6 +18,18 @@ export default function validate(input, initial, tag) {
         }
 
         if (tag === 'register') {
+            if (!input.gender) {
+                errors.gender = 'Selection is required';
+            }
+        }
+
+        if (tag === 'register') {
+            if (!input.userType) {
+                errors.userType = 'Selection is required';
+            }
+        }
+
+        if (tag === 'register') {
             if (!input.lastName) {
                 errors.lastName = 'Last Name is required';
             } else if (input.lastName.length <= 2) {
@@ -33,11 +45,17 @@ export default function validate(input, initial, tag) {
             }
         }
 
-        if (tag === 'login' || tag === 'register') {
+        if (tag === 'register') {
             if (!input.password) {
                 errors.password = 'Password is required';
             } else if (input.password.length < 8 || input.password.length > 20) {
                 errors.password = 'Password length between 8 and 20';
+            }
+        }
+
+        if (tag === 'login') {
+            if (!input.password) {
+                errors.password = 'Password is required';
             }
         }
 

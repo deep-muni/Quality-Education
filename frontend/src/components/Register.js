@@ -3,6 +3,7 @@ import '../css/Form.css';
 import validate from "../helper/validation";
 import Axios from "axios";
 import urlModifier from "../helper/urlModifier";
+import {Link, useHistory, withRouter} from "react-router-dom";
 
 const Register = () => {
 
@@ -10,6 +11,8 @@ const Register = () => {
     const [errors, setErrors] = useState({});
     const [initial, setInitial] = useState(true);
     const [result, setResult] = useState('');
+
+    const history = useHistory();
 
     useEffect(() => {
         setErrors(validate(input, initial, 'register'));
@@ -26,7 +29,9 @@ const Register = () => {
                     email: input.email,
                     firstName: input.firstName,
                     lastName: input.lastName,
+                    gender: input.gender,
                     dateOfBirth: input.dateOfBirth,
+                    userType: input.userType,
                     password: input.password
                 }
 
@@ -34,8 +39,10 @@ const Register = () => {
                     .then(res => {
                         if (res.data.status) {
                             setResult("User has been registered");
+                            alert("User has been registered");
+                            history.push('/login');
                         } else {
-                            setResult("Username already exist");
+                            setResult("Email already exist");
                         }
                     })
                     .catch(error => {
@@ -76,11 +83,39 @@ const Register = () => {
                     {errors.lastName && (<p className={"register__error"}>{errors.lastName}</p>)}
                 </div>
 
+                <div className="register__input-section register__input-gender">
+                    <label htmlFor="lastName">Gender</label>
+                    <div className="register__gender">
+                        <input type="radio" value="Male" name="gender" onChange={handleChange}/>
+                        <span> Male</span>
+                    </div>
+                    <div className="register__gender">
+                        <input type="radio" value="Female" name="gender" onChange={handleChange}/>
+                        <span> Female</span>
+                    </div>
+                    <div className="register__gender">
+                        <input type="radio" value="Other" name="gender" onChange={handleChange}/>
+                        <span> Other</span>
+                    </div>
+                    {errors.gender && (<p className={"register__error"}>{errors.gender}</p>)}
+                </div>
+
                 <div className="register__input-section">
                     <label htmlFor="dateOfBirth">Date of Birth</label>
                     <input type="date" name="dateOfBirth" className="register__inp"
                            onChange={handleChange} value={input.dateOfBirth || ''}/>
                     {errors.dateOfBirth && (<p className={"register__error"}>{errors.dateOfBirth}</p>)}
+                </div>
+
+                <div className="register__input-section">
+                    <label htmlFor="dateOfBirth">User Type</label>
+                    <select className="register__inp" onChange={handleChange} name="userType">
+                        <option value="none" disabled selected> -- </option>
+                        <option value="student">Student</option>
+                        <option value="volunteer">Volunteer</option>
+                        <option value="admin">Administrator</option>
+                    </select>
+                    {errors.userType && (<p className={"register__error"}>{errors.userType}</p>)}
                 </div>
 
                 <div className="register__input-section">
@@ -103,10 +138,10 @@ const Register = () => {
             </form>
             <div className="register__redirect">
                 <span>Already a User? </span>
-                <a href="http://localhost" className="register__link"> Login</a>
+                <Link to={"/login"} className="register__link"> Login</Link>
             </div>
         </div>
     );
 };
 
-export default Register;
+export default withRouter(Register);

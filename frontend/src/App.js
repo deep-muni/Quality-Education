@@ -10,7 +10,6 @@ function App() {
         <div className="app">
             <Router>
                 <div className="App">
-                    <Navigation/>
                     <Routes/>
                 </div>
             </Router>
