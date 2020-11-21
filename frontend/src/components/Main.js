@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {useHistory, withRouter} from "react-router-dom";
-import validate from "../helper/validation";
 
 const Main = () => {
 
@@ -11,7 +10,6 @@ const Main = () => {
     })
 
     const checkUser = () => {
-        console.log(window.localStorage.getItem("email"));
         if (window.localStorage.getItem("email") !== null) {
             history.push('/home');
         }

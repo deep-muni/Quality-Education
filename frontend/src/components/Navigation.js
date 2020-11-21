@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link, useHistory, withRouter} from "react-router-dom";
 import '../css/Navigation.css';
 
-const Navigation = () => {
+const Navigation = (props) => {
 
     const [type, setType] = useState(Boolean);
 
@@ -14,23 +14,18 @@ const Navigation = () => {
         }
     }, [type])
 
-    const history = useHistory();
-
-    const handleLogout = () => {
-        window.localStorage.clear();
-        history.push('/');
-    }
-
     return (
         <div className="navigation">
-            <div className="navigation__welcome">
-                <span>{window.localStorage.getItem("fullName")}</span>
-            </div>
+            <Link to={`${props.u}`}>
+                <div className="navigation__welcome">
+                    <span>{window.localStorage.getItem("fullName")}</span>
+                </div>
+            </Link>
             <div className="navigation__navigate">
-                <Link to={""}>Profile</Link>
-                <Link to={""}>Study Material</Link>
-                {type && <Link to={""}>Volunteer Panel</Link>}
-                <Link onClick={handleLogout} to={""}>Logout</Link>
+                <Link to={`${props.u}/profile`}>Profile</Link>
+                <Link to={`${props.u}/material`}>Study Material</Link>
+                {type && <Link to={`${props.u}/volunteer`}>Volunteer</Link>}
+                <Link onClick={() => window.localStorage.clear()} to={"/"}>Logout</Link>
             </div>
         </div>
     );

@@ -8,13 +8,13 @@ import Main from "./Main";
 
 const Routes = () => {
     return (
-        <div>
+        <div className="deep">
             <Switch>
                 <Route exact path="/" component={Main}/>
-                <Route exact path='/register' component={Register}/>
-                <Route exact path='/login' component={Login}/>
-                <Route exact path='/admin' component={Administrator}/>
-                <Route exact path='/home' component={Home}/>
+                <Route path='/register' component={Register}/>
+                <Route path='/login' component={Login}/>
+                <Route path='/admin' component={Administrator}/>
+                <Route path='/home' component={Home}/>
             </Switch>
         </div>
     );
