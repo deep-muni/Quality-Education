@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 import '../css/Form.css';
 import validate from "../helper/validation";
 import Axios from "axios";
 import urlModifier from "../helper/urlModifier";
+
 
 const Register = () => {
 
@@ -103,7 +105,7 @@ const Register = () => {
             </form>
             <div className="register__redirect">
                 <span>Already a User? </span>
-                <a href="http://localhost" className="register__link"> Login</a>
+                <Link to="/login" className="register__link"> Login </Link>
             </div>
         </div>
     );

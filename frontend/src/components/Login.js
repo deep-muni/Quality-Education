@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { Link } from "react-router-dom";
 import '../css/Form.css';
 import validate from "../helper/validation";
 import Axios from "axios";
@@ -71,7 +72,7 @@ const Login = () => {
             </form>
             <div className="login__redirect">
                 <span>Do not have an account? </span>
-                <a href="http://localhost" className="login__link"> Register</a>
+                <Link to="/register" className="login__link"> Register </Link>
             </div>
         </div>
     );
