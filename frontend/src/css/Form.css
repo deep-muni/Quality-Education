@@ -12,7 +12,7 @@
 
 .register__input-section, .login__input-section {
     position: relative;
-    padding: 7px 0;
+    padding: 5px 0;
 }
 
 .register label, .login label {
@@ -38,6 +38,24 @@
     transition: 0.2s border linear;
 }
 
+.register__input-gender{
+    display: flex;
+    align-items: center;
+    align-content: space-evenly;
+}
+
+.register__gender{
+    margin: 10px 0;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    width: 100%;
+}
+
+.register__gender span{
+    margin-left: 5px;
+}
+
 .register__inp:hover, .login__inp:hover {
     border: 1px solid #000000;
 }
@@ -48,11 +66,11 @@
 
 .register__submit, .login__submit {
     width: 100%;
-    margin-top: 15px;
-    height: 50px;
+    margin-top: 10px;
+    height: 30px;
     border-radius: 5px;
     outline: none;
-    font-size: 25px;
+    font-size: 20px;
     background-color: #0073b1;
     color: #ffffff;
     border: 1px solid #0073b1;
@@ -76,8 +94,8 @@
 
 .register__redirect, .login__redirect {
     text-align: center;
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 5px;
+    font-size: 15px;
 }
 
 .register__link, .login__link {

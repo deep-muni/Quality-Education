@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import { Link } from "react-router-dom";
 import '../css/Form.css';
 import validate from "../helper/validation";
 import Axios from "axios";
 import urlModifier from "../helper/urlModifier";
+import {Link, useHistory, withRouter} from "react-router-dom";
 
 const Login = () => {
+
+    const history = useHistory();
 
     const [input, setInput] = useState({});
     const [errors, setErrors] = useState({});
@@ -21,7 +23,7 @@ const Login = () => {
         if (initial) {
             setResult("Fill the form");
         } else {
-            if(Object.keys(errors).length === 0){
+            if (Object.keys(errors).length === 0) {
                 setResult("");
                 const User = {
                     email: input.email,
@@ -32,6 +34,14 @@ const Login = () => {
                     .then(res => {
                         if (res.data.status) {
                             setResult("User login successful");
+                            if (res.data.username === 'admin') {
+                                history.push('/admin');
+                            } else {
+                                window.localStorage.setItem("fullName", res.data.fullName);
+                                window.localStorage.setItem("email", res.data.email);
+                                window.localStorage.setItem("userType", res.data.userType);
+                                history.push('/home');
+                            }
                         } else {
                             setResult("Invalid Credentials");
                         }
@@ -39,7 +49,7 @@ const Login = () => {
                     .catch(error => {
                         console.log(error);
                     })
-            }else{
+            } else {
                 setResult("Errors in form");
             }
         }
@@ -72,10 +82,10 @@ const Login = () => {
             </form>
             <div className="login__redirect">
                 <span>Do not have an account? </span>
-                <Link to="/register" className="login__link"> Register </Link>
+                <Link to={"/register"} className="login__link"> Register</Link>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default withRouter(Login);

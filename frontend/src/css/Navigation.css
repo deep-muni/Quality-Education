@@ -1,0 +1,29 @@
+.navigation{
+    display: flex;
+    align-items: center;
+    background: #0073b1;
+    padding: 5px 20px;
+}
+
+.navigation__welcome{
+    padding: 5px 20px;
+    background: #0b2d68;
+    font-size: 30px;
+    color: #ffffff;
+    border-radius: 10px;
+    margin-right: 100px;
+}
+
+.navigation__navigate a{
+    margin: 0 50px;
+    font-size: 25px;
+    padding: 5px 10px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.navigation__navigate a:hover{
+    background: #0b2d68;
+    cursor: pointer;
+    transition: 300ms linear;
+}
