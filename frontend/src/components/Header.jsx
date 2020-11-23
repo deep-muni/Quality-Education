@@ -5,8 +5,11 @@ class Header extends Component {
   state = {};
   render() {
     return (
-      <nav className="navbar navbar-expand-md navbar-light bg-warning">
-        <a className="navbar-brand" style={{ alignItems: "center" }}>
+      <nav
+        className="navbar navbar-expand-md navbar-light"
+        style={{ backgroundColor: "#0073b1" }}
+      >
+        <a className="navbar-brand text-light" style={{ alignItems: "center" }}>
           <h4>Quality Education</h4>
         </a>
         <button
@@ -20,21 +23,21 @@ class Header extends Component {
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <Link to="/" style={{ textDecoration: "none" }}>
-                <div className="nav-link text-dark">
+                <div className="nav-link text-light">
                   <strong>HOME</strong>
                 </div>
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <div className="nav-link text-dark">
+              <Link to="/about" style={{ textDecoration: "none" }}>
+                <div className="nav-link text-light">
                   <strong>ABOUT US</strong>
                 </div>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/login" style={{ textDecoration: "none" }}>
-                <div className="nav-link text-dark">
+                <div className="nav-link text-light">
                   <strong>LOGIN</strong>
                 </div>
               </Link>
