@@ -29,13 +29,6 @@ class Header extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/about" style={{ textDecoration: "none" }}>
-                <div className="nav-link text-light">
-                  <strong>ABOUT US</strong>
-                </div>
-              </Link>
-            </li>
-            <li className="nav-item">
               <Link to="/login" style={{ textDecoration: "none" }}>
                 <div className="nav-link text-light">
                   <strong>LOGIN</strong>

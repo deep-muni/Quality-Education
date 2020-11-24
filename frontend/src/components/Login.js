@@ -4,6 +4,7 @@ import validate from "../helper/validation";
 import Axios from "axios";
 import urlModifier from "../helper/urlModifier";
 import {Link, useHistory, withRouter} from "react-router-dom";
+import Header from './Header';
 
 const Login = () => {
 
@@ -61,30 +62,37 @@ const Login = () => {
     }
 
     return (
-        <div className="login">
-            <form className="login__form" onSubmit={handleSubmit}>
-                <div className="login__input-section">
-                    <label htmlFor="email">Email</label>
-                    <input type="text" name="email" className="login__inp"
-                           onChange={handleChange} value={input.email || ''}/>
-                    {errors.email && (<p className={"login__error"}>{errors.email}</p>)}
+        <div>
+           <Header/>
+           <div className="login" style={{marginTop:"17vh"}}>
+               <div style={{textAlign:"center", marginBottom:"3vh"}}>
+                    <h3>Login</h3>
+               </div>
+                <form className="login__form" onSubmit={handleSubmit}>
+                    <div className="login__input-section">
+                        <label htmlFor="email">Email</label>
+                        <input type="text" name="email" className="login__inp"
+                            onChange={handleChange} value={input.email || ''}/>
+                        {errors.email && (<p className={"login__error"}>{errors.email}</p>)}
+                    </div>
+                    <div className="login__input-section">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" name="password" className="login__inp"
+                            onChange={handleChange} value={input.password || ''}/>
+                        {errors.password && (<p className={"login__error"}>{errors.password}</p>)}
+                    </div>
+                    <div className="login__input-section">
+                        {(<p className={"login__mainError"}>{result}</p>)}
+                        <button type="submit" className="login__submit">Login</button>
+                    </div>
+                </form>
+                <div className="login__redirect">
+                    <span>Do not have an account? </span>
+                    <Link to={"/register"} className="login__link"> Register</Link>
                 </div>
-                <div className="login__input-section">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name="password" className="login__inp"
-                           onChange={handleChange} value={input.password || ''}/>
-                    {errors.password && (<p className={"login__error"}>{errors.password}</p>)}
-                </div>
-                <div className="login__input-section">
-                    {(<p className={"login__mainError"}>{result}</p>)}
-                    <button type="submit" className="login__submit">Login</button>
-                </div>
-            </form>
-            <div className="login__redirect">
-                <span>Do not have an account? </span>
-                <Link to={"/register"} className="login__link"> Register</Link>
-            </div>
+            </div> 
         </div>
+        
     );
 };
 

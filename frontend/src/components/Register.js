@@ -4,6 +4,7 @@ import validate from "../helper/validation";
 import Axios from "axios";
 import urlModifier from "../helper/urlModifier";
 import {Link, useHistory, withRouter} from "react-router-dom";
+import Header from './Header';
 
 const Register = () => {
 
@@ -60,7 +61,12 @@ const Register = () => {
     }
 
     return (
-        <div className="register">
+        <div>
+            <Header/>
+            <div className="register" style={{marginTop:"1.5vh"}}>
+            <div style={{textAlign:"center", marginBottom:"1.5vh"}}>
+                    <h3>Registration</h3>
+            </div>
             <form className="register__form" onSubmit={handleSubmit}>
                 <div className="register__input-section">
                     <label htmlFor="email">Email</label>
@@ -140,6 +146,7 @@ const Register = () => {
                 <span>Already a User? </span>
                 <Link to={"/login"} className="register__link"> Login</Link>
             </div>
+        </div>
         </div>
     );
 };

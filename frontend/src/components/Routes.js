@@ -5,12 +5,13 @@ import Login from "./Login";
 import Administrator from "./Administrator";
 import Home from "./Home";
 import Main from "./Main";
+import About from './About';
 
 const Routes = () => {
     return (
         <div className="deep">
             <Switch>
-                <Route exact path="/" component={Main}/>
+                <Route exact path="/" component={About}/>
                 <Route path='/register' component={Register}/>
                 <Route path='/login' component={Login}/>
                 <Route path='/admin' component={Administrator}/>
