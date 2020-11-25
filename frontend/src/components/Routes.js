@@ -6,6 +6,7 @@ import Administrator from "./Administrator";
 import Home from "./Home";
 import Main from "./Main";
 import About from './About';
+import Scholarship from './Scholarship';
 
 const Routes = () => {
     return (
@@ -13,6 +14,7 @@ const Routes = () => {
             <Switch>
                 <Route exact path="/" component={About}/>
                 <Route path='/register' component={Register}/>
+                <Route path="/scholarship" component={Scholarship}/>
                 <Route path='/login' component={Login}/>
                 <Route path='/admin' component={Administrator}/>
                 <Route path='/home' component={Home}/>
