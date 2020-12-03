@@ -34,7 +34,7 @@ const register = (req, res) => {
 }
 
 const getProfile = async (req, res) => {
-    User.findOne({email: req.body.email}).then(user => {
+    User.findOne({email: req.query.email}).then(user => {
         if (user) {
             res.json({status: true, user: user});
         }else{
@@ -93,7 +93,7 @@ const updateSubject =  (req, res) => {
     User.findOne({email: req.body.email})
         .then(user => {
             if (user) {
-                User.updateOne({ email: req.body.email }, { location:  req.body.subject }, function(err, result) {
+                User.updateOne({ email: req.body.email }, { subject:  req.body.subject }, function(err, result) {
                     if (err) {
                         res.json({status: false, message: "Updated failed"});
                     } else {
