@@ -16,6 +16,7 @@ const Register = () => {
     const history = useHistory();
 
     useEffect(() => {
+        document.title = "Register";
         setErrors(validate(input, initial, 'register'));
     }, [input, initial])
 

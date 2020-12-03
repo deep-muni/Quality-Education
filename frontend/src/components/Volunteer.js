@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const Volunteer = () => {
+
+    useEffect(() => {
+        document.title = "Volunteer"
+    }, [])
+
     return (
         <div>
             I am Volunteer

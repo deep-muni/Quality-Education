@@ -4,7 +4,7 @@ import validate from "../helper/validation";
 import Axios from "axios";
 import urlModifier from "../helper/urlModifier";
 import {Link, useHistory, withRouter} from "react-router-dom";
-import Header from './Header';
+import Header from "./Header";
 
 const Login = () => {
 
@@ -16,6 +16,7 @@ const Login = () => {
     const [result, setResult] = useState('');
 
     useEffect(() => {
+        document.title = "Login"
         setErrors(validate(input, initial, 'login'));
     }, [input, initial])
 

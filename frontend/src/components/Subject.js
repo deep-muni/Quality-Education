@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const Subject = () => {
+
+    useEffect(() => {
+        document.title = "Subject"
+    }, [])
+
     return (
         <div>
             Subject

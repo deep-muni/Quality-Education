@@ -1,17 +1,18 @@
 import React, {useEffect} from 'react';
 import {Link, useHistory, withRouter} from "react-router-dom";
-import Header from "./Header";
 import logo from "../img/logo.png";
 import deepmuni from "../img/deepmuni.jpg";
 import dhruvtarpara from "../img/dhruvtarpara.jpg";
 import simrandiwan from "../img/simrandiwan.jpg";
 import dhruvdalwadi from "../img/dhruvdalwadi.jpg";
+import Header from "./Header";
 
 const Main = () => {
 
     const history = useHistory();
 
     useEffect(() => {
+        document.title = "Quality Education";
         checkUser();
     })
 

@@ -1,8 +1,12 @@
-import React from 'react';
-import Header from "./Header";
+import React, {useEffect} from 'react';
 import "../css/Scholarship.css";
+import Header from "./Header";
 
 const Scholarship = () => {
+
+    useEffect(() => {
+        document.title = "Scholarship"
+    }, [])
 
     const scholarships = [
         {
