@@ -67,6 +67,18 @@ export default function validate(input, initial, tag) {
             }
         }
 
+        if (tag === 'subject') {
+            if (!input.subject) {
+                errors.subject = 'Selection is required';
+            }
+        }
+
+        if (tag === 'location') {
+            if (!input.location) {
+                errors.location = 'Selection is required';
+            }
+        }
+
     }
     return errors;
 };

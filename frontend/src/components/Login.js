@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import '../css/Form.css';
 import validate from "../helper/validation";
 import Axios from "axios";
 import urlModifier from "../helper/urlModifier";

@@ -4,6 +4,7 @@ import validate from "../helper/validation";
 import Axios from "axios";
 import urlModifier from "../helper/urlModifier";
 
+
 const ChangePassword = () => {
 
     const [input, setInput] = useState({});
@@ -33,11 +34,11 @@ const ChangePassword = () => {
                 await Axios.put(urlModifier() + "user/updatepassword", User)
                     .then(res => {
                         if (res.data.status) {
-                            setResult("User changed successfully.");
-                            alert("User password successfully.");
+                            setResult("Password changed successfully.");
+                            alert("Password changed successfully.");
                             history.push('/home');
                         } else {
-                            setResult("User not changed.");
+                            setResult("Password not changed.");
                         }
                     })
                     .catch(error => {
@@ -58,14 +59,14 @@ const ChangePassword = () => {
         <div className="changePassword">
             <form className="changePassword__form" onSubmit={handleSubmit}>
                 <div className="changePassword__input-section">
-                    <label htmlFor="password">Password</label>
+                    <span htmlFor="password">Password</span>
                     <input type="password" name="password" className="changePassword__inp"
                            onChange={handleChange} value={input.password || ''}/>
                     {errors.password && (<span className={"changePassword__error"}>{errors.password}</span>)}
                 </div>
 
                 <div className="changePassword__input-section">
-                    <label htmlFor="confirmPassword">Confirm Password</label>
+                    <span htmlFor="confirmPassword">Confirm Password</span>
                     <input type="password" name="confirmPassword" className="changePassword__inp"
                            onChange={handleChange} value={input.confirmPassword || ''}/>
                     {errors.confirmPassword && (<span className={"changePassword__error"}>{errors.confirmPassword}</span>)}
