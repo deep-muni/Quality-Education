@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const ChangePassword = () => {
+
+    useEffect(() => {
+        document.title = "Change Password"
+    }, [])
+
     return (
         <div>
-
         </div>
     );
 };

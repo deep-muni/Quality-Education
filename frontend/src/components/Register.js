@@ -16,6 +16,7 @@ const Register = () => {
     const history = useHistory();
 
     useEffect(() => {
+        document.title = "Register";
         setErrors(validate(input, initial, 'register'));
     }, [input, initial])
 
@@ -63,30 +64,27 @@ const Register = () => {
     return (
         <div>
             <Header/>
-            <div className="register" style={{marginTop:"1.5vh"}}>
-            <div style={{textAlign:"center", marginBottom:"1.5vh"}}>
-                    <h3>Registration</h3>
-            </div>
+            <div className="register">
             <form className="register__form" onSubmit={handleSubmit}>
                 <div className="register__input-section">
                     <label htmlFor="email">Email</label>
                     <input type="text" name="email" className="register__inp"
                            onChange={handleChange} value={input.email || ''}/>
-                    {errors.email && (<p className={"register__error"}>{errors.email}</p>)}
+                    {errors.email && (<span className={"register__error"}>{errors.email}</span>)}
                 </div>
 
                 <div className="register__input-section">
                     <label htmlFor="firstName">First Name</label>
                     <input type="text" name="firstName" className="register__inp"
                            onChange={handleChange} value={input.firstName || ''}/>
-                    {errors.firstName && (<p className={"register__error"}>{errors.firstName}</p>)}
+                    {errors.firstName && (<span className={"register__error"}>{errors.firstName}</span>)}
                 </div>
 
                 <div className="register__input-section">
                     <label htmlFor="lastName">Last Name</label>
                     <input type="text" name="lastName" className="register__inp"
                            onChange={handleChange} value={input.lastName || ''}/>
-                    {errors.lastName && (<p className={"register__error"}>{errors.lastName}</p>)}
+                    {errors.lastName && (<span className={"register__error"}>{errors.lastName}</span>)}
                 </div>
 
                 <div className="register__input-section register__input-gender">
@@ -103,14 +101,14 @@ const Register = () => {
                         <input type="radio" value="Other" name="gender" onChange={handleChange}/>
                         <span> Other</span>
                     </div>
-                    {errors.gender && (<p className={"register__error"}>{errors.gender}</p>)}
+                    {errors.gender && (<span className={"register__error"}>{errors.gender}</span>)}
                 </div>
 
                 <div className="register__input-section">
                     <label htmlFor="dateOfBirth">Date of Birth</label>
                     <input type="date" name="dateOfBirth" className="register__inp"
                            onChange={handleChange} value={input.dateOfBirth || ''}/>
-                    {errors.dateOfBirth && (<p className={"register__error"}>{errors.dateOfBirth}</p>)}
+                    {errors.dateOfBirth && (<span className={"register__error"}>{errors.dateOfBirth}</span>)}
                 </div>
 
                 <div className="register__input-section">
@@ -121,24 +119,24 @@ const Register = () => {
                         <option value="volunteer">Volunteer</option>
                         <option value="admin">Administrator</option>
                     </select>
-                    {errors.userType && (<p className={"register__error"}>{errors.userType}</p>)}
+                    {errors.userType && (<span className={"register__error"}>{errors.userType}</span>)}
                 </div>
 
                 <div className="register__input-section">
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" className="register__inp"
                            onChange={handleChange} value={input.password || ''}/>
-                    {errors.password && (<p className={"register__error"}>{errors.password}</p>)}
+                    {errors.password && (<span className={"register__error"}>{errors.password}</span>)}
                 </div>
 
                 <div className="register__input-section">
                     <label htmlFor="confirmPassword">Confirm Password</label>
                     <input type="password" name="confirmPassword" className="register__inp"
                            onChange={handleChange} value={input.confirmPassword || ''}/>
-                    {errors.confirmPassword && (<p className={"register__error"}>{errors.confirmPassword}</p>)}
+                    {errors.confirmPassword && (<span className={"register__error"}>{errors.confirmPassword}</span>)}
                 </div>
                 <div className="register__input-section">
-                    {(<p className={"register__mainError"}>{result}</p>)}
+                    {(<span className={"register__mainError"}>{result}</span>)}
                     <button type="submit" className="register__submit">Register</button>
                 </div>
             </form>
