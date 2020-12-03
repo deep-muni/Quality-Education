@@ -8,8 +8,8 @@ import dhruvdalwadi from "../img/dhruvdalwadi.jpg";
 import Header from "./Header";
 class About extends Component {
     state = {  }
-    render() { 
-        return ( 
+    render() {
+        return (
             <div>
                 <Header/>
                 <div style={{textAlign:"center", marginTop:"5vh"}}>
@@ -84,8 +84,8 @@ class About extends Component {
                             <img src={deepmuni} className="card-img-top" alt="..."/>
                                 <div className="card-body">
                                     <h5 className="card-title">Deep Muni</h5>
-                                    <p className="card-text">Expert in developing web applications using Node.js, React.js, and Angular.js. Majorily a front-end developer.</p>
-                                    <p className="card-text" style={{fontStyle:"italic"}}>(Masters of Applied Computer Science)</p> 
+                                    <p className="card-text">Expert in developing web applications using Node.js, React.js, and Angular.js. Full Stack Developer.</p>
+                                    <p className="card-text" style={{fontStyle:"italic"}}>(Masters of Applied Computer Science)</p>
                                 </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@ class About extends Component {
                                     <p className="card-text">Major area of interest in working on back-end using Java. Moreover, he also worked on different cloud platforms.</p>
                                     <p className="card-text" style={{fontStyle:"italic"}}>(Masters of Applied Computer Science)</p>
                                 </div>
-                        </div>  
+                        </div>
                     </div>
                     <div className="col-sm-8 col-md-6 col-lg-3 mx-auto mb-3">
                         <div className="card" style={{width:"100%"}}>
@@ -107,7 +107,7 @@ class About extends Component {
                                     <p className="card-text">Developed many web applications using Node.js and React.js. Majorily a back-end developer.</p>
                                     <p className="card-text" style={{fontStyle:"italic"}}>(Masters of Applied Computer Science)</p>
                                 </div>
-                        </div>  
+                        </div>
                     </div>
                     <div className="col-sm-8 col-md-6 col-lg-3 mx-auto mb-3">
                         <div className="card" style={{width:"100%"}}>
@@ -117,12 +117,12 @@ class About extends Component {
                                     <p className="card-text">Strong knowledge base in MERN (MongoDB, Express.js, React.js, and Node.js) technologies.</p>
                                     <p className="card-text" style={{fontStyle:"italic"}}>(Masters of Applied Computer Science)</p>
                                 </div>
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </div>
          );
     }
 }
- 
+
 export default About;

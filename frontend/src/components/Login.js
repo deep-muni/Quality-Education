@@ -73,16 +73,16 @@ const Login = () => {
                         <label htmlFor="email">Email</label>
                         <input type="text" name="email" className="login__inp"
                             onChange={handleChange} value={input.email || ''}/>
-                        {errors.email && (<p className={"login__error"}>{errors.email}</p>)}
+                        {errors.email && (<span className={"login__error"}>{errors.email}</span>)}
                     </div>
                     <div className="login__input-section">
                         <label htmlFor="password">Password</label>
                         <input type="password" name="password" className="login__inp"
                             onChange={handleChange} value={input.password || ''}/>
-                        {errors.password && (<p className={"login__error"}>{errors.password}</p>)}
+                        {errors.password && (<span className={"login__error"}>{errors.password}</span>)}
                     </div>
                     <div className="login__input-section">
-                        {(<p className={"login__mainError"}>{result}</p>)}
+                        {(<span className={"login__mainError"}>{result}</span>)}
                         <button type="submit" className="login__submit">Login</button>
                     </div>
                 </form>
@@ -90,9 +90,9 @@ const Login = () => {
                     <span>Do not have an account? </span>
                     <Link to={"/register"} className="login__link"> Register</Link>
                 </div>
-            </div> 
+            </div>
         </div>
-        
+
     );
 };
 
