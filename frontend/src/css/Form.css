@@ -1,6 +1,6 @@
 .register, .login {
     max-width: 400px;
-    margin: 0 auto;
+    margin: 10px auto;
     background-color: transparent;
     padding: 20px;
     font-family: Arial, serif;
@@ -67,10 +67,10 @@
 .register__submit, .login__submit {
     width: 100%;
     margin-top: 10px;
-    height: 30px;
+    height: 40px;
     border-radius: 5px;
     outline: none;
-    font-size: 20px;
+    font-size: 25px;
     background-color: #0073b1;
     color: #ffffff;
     border: 1px solid #0073b1;

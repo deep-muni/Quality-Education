@@ -63,10 +63,7 @@ const Register = () => {
     return (
         <div>
             <Header/>
-            <div className="register" style={{marginTop:"1.5vh"}}>
-            <div style={{textAlign:"center", marginBottom:"1.5vh"}}>
-                    <h3>Registration</h3>
-            </div>
+            <div className="register">
             <form className="register__form" onSubmit={handleSubmit}>
                 <div className="register__input-section">
                     <label htmlFor="email">Email</label>

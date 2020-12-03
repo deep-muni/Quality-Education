@@ -64,10 +64,7 @@ const Login = () => {
     return (
         <div>
            <Header/>
-           <div className="login" style={{marginTop:"17vh"}}>
-               <div style={{textAlign:"center", marginBottom:"3vh"}}>
-                    <h3>Login</h3>
-               </div>
+           <div className="login">
                 <form className="login__form" onSubmit={handleSubmit}>
                     <div className="login__input-section">
                         <label htmlFor="email">Email</label>
