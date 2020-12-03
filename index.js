@@ -7,12 +7,15 @@ const userRoute = require('./backend/route/UserRoute');
 const adminRoute = require('./backend/route/adminRoute');
 const db = require('./backend/db/connection');
 
+app.use(express.static(__dirname + '/frontend/build/'));
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
     res.status(200).send("OK");
+    res.sendFile(path.join(__dirname + '/frontend/build/index.html'));
 });
 
 app.use('/user', userRoute);

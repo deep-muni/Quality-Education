@@ -10,12 +10,17 @@
     transition: 2s tranform linear;
 }
 
-.register__input-section, .login__input-section {
+.changePassword {
+    max-width: 400px;
+    margin: 10px auto 0;
+}
+
+.register__input-section, .login__input-section, .changePassword__input-section {
     position: relative;
     padding: 5px 0;
 }
 
-.register label, .login label {
+.register label, .login label, .changePassword label {
     position: absolute;
     top: -5px;
     left: 0;
@@ -24,7 +29,7 @@
     font-style: italic;
 }
 
-.register__inp, .login__inp {
+.register__inp, .login__inp, .changePassword__inp {
     margin: 10px 0;
     box-sizing: border-box;
     width: 100%;
@@ -38,13 +43,13 @@
     transition: 0.2s border linear;
 }
 
-.register__input-gender{
+.register__input-gender {
     display: flex;
     align-items: center;
     align-content: space-evenly;
 }
 
-.register__gender{
+.register__gender {
     margin: 10px 0;
     display: flex;
     font-size: 18px;
@@ -52,7 +57,7 @@
     width: 100%;
 }
 
-.register__gender span{
+.register__gender span {
     margin-left: 5px;
 }
 
@@ -64,7 +69,7 @@
     border-color: #142850;
 }
 
-.register__submit, .login__submit {
+.register__submit, .login__submit, .changePassword__submit {
     width: 100%;
     margin-top: 10px;
     height: 40px;
@@ -76,16 +81,16 @@
     border: 1px solid #0073b1;
 }
 
-.register__submit:active, .login__submit:active {
+.register__submit:active, .login__submit:active, .changePassword__submit:active {
     transform: translate(1px, 1px);
 }
 
-.register__submit:focus, .login__submit:focus {
+.register__submit:focus, .login__submit:focus, .changePassword__submit:focus {
     border: 1px solid #0073b1;
     box-shadow: none;
 }
 
-.register__submit:hover, .login__submit:hover {
+.register__submit:hover, .login__submit:hover, .changePassword__submit:hover {
     cursor: pointer;
     background-color: #006097;
     border: 1px solid #006097;
@@ -108,7 +113,7 @@
     color: #006097;
 }
 
-.register__error, .login__error {
+.register__error, .login__error, .changePassword__error {
     position: absolute;
     bottom: -5px;
     right: 0;
@@ -116,7 +121,7 @@
     color: #ff0000;
 }
 
-.register__mainError, .login__mainError {
+.register__mainError, .login__mainError, .changePassword__mainError {
     position: absolute;
     top: -5px;
     left: 0;

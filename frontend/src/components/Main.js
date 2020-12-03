@@ -26,7 +26,7 @@ const Main = () => {
         <div>
             <Header/>
             <div style={{textAlign: "center", marginTop: "5vh"}}>
-                <img src={logo} height="150vh"/>
+                <img src={logo} height="150vh" alt="..."/>
                 <h2 style={{marginTop: "1vh"}}>Quality Education</h2>
             </div>
             <p style={{margin: "5vh", fontSize: "20px"}}>

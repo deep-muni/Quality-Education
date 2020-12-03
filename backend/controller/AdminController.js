@@ -1,5 +1,5 @@
 const subjects = { "subjects": ["Maths", "Science", "English", "Computer"] };
-const locations = { "locations": ["Ahmedabad", "Surat", "Halifax", "Baroda"] };
+const locations = { "locations": ["Ahmadabad", "Surat", "Halifax", "Baroda"] };
 
 const getSubjects = (req, res) => {
     res.json(subjects);

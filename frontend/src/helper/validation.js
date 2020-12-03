@@ -53,13 +53,13 @@ export default function validate(input, initial, tag) {
             }
         }
 
-        if (tag === 'login') {
+        if (tag === 'login' || tag === "changePassword") {
             if (!input.password) {
                 errors.password = 'Password is required';
             }
         }
 
-        if (tag === 'register') {
+        if (tag === 'register' || tag === "changePassword") {
             if (!input.confirmPassword) {
                 errors.confirmPassword = 'Confirm Password is required';
             } else if (input.password !== input.confirmPassword) {
