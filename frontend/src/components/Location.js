@@ -14,7 +14,7 @@ const Location = () => {
 
     const history = useHistory();
 
-    useEffect(async () => {
+    useEffect( () => {
         const fetchData = async () => {
             const data = await Axios.get(urlModifier() + "admin/getlocations");
             setLocation(data.data.locations);
@@ -23,7 +23,7 @@ const Location = () => {
         document.title = "Subject";
         fetchData();
         setErrors(validate(input, initial, 'location'));
-    }, [])
+    }, [input, initial])
 
     const handleSubmit = async (event) => {
         event.preventDefault();

@@ -14,16 +14,15 @@ const Subject = () => {
 
     const history = useHistory();
 
-    useEffect(async () => {
+    useEffect(() => {
         const fetchData = async () => {
             const data = await Axios.get(urlModifier() + "admin/getsubjects");
             setSubject(data.data.subjects);
         };
-
         document.title = "Subject";
         fetchData();
         setErrors(validate(input, initial, 'subject'));
-    }, [])
+    }, [input, initial])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
