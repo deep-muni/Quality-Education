@@ -1,0 +1,35 @@
+.material {
+    max-width: 700px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px 5px #777777;
+    border-radius: 20px;
+    padding: 20px 0;
+    background: #0073B1;
+    color: #ffffff;
+}
+
+.material__section {
+    max-width: 560px;
+    margin: 0 auto 20px;
+}
+
+.material__section:last-child {
+    margin-bottom: 0;
+}
+
+.material__title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.material__subject span {
+    font-weight: 600;
+}
+
+.material__video {
+    margin-top: 10px;
+}

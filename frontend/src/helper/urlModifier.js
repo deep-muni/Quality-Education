@@ -4,6 +4,6 @@ export default function urlModifier() {
     if(url.includes("localhost")){
         return "http://localhost:5000/";
     }else{
-        return "";
+        return "https://qualityeducationbackend.herokuapp.com/";
     }
 }

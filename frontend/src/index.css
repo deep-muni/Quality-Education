@@ -4,3 +4,13 @@ table { border-collapse: collapse; border-spacing: 0; }
 a { text-decoration:none; outline:none}
 a:hover { cursor:pointer; text-decoration:none; text-indent:0}
 body{font-family: Arial, serif}
+
+.userHome{
+    display: flex;
+    text-align: center;
+    font-family: "Lucida Handwriting", serif;
+    font-size: 80px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}

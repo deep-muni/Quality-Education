@@ -6,6 +6,11 @@ import Administrator from "./Administrator";
 import Home from "./Home";
 import Main from "./Main";
 import Scholarship from './Scholarship';
+import "../css/Navigation.css";
+import "../css/Scholarship.css";
+import "../css/Profile.css";
+import "../css/Form.css";
+import "../css/Material.css";
 
 const Routes = () => {
     return (

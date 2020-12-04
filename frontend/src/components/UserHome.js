@@ -7,8 +7,8 @@ const UserHome = () => {
     }, [])
 
     return (
-        <div>
-            I am Home
+        <div className="userHome">
+            Welcome {window.localStorage.getItem("fullName")} to Quality Education.
         </div>
     );
 };

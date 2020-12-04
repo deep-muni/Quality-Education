@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import "../css/Scholarship.css";
 import Header from "./Header";
 
 const Scholarship = () => {

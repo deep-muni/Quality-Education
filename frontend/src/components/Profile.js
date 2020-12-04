@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import '../css/Profile.css';
 import PersonalInformation from "./PersonalInformation";
 import ChangePassword from "./ChangePassword";
 import Subject from "./Subject";
