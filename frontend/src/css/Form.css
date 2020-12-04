@@ -1,4 +1,4 @@
-.register, .login {
+.register, .login, .volunteer{
     max-width: 400px;
     margin: 10px auto;
     background-color: transparent;
@@ -15,12 +15,12 @@
     margin: 10px auto 0;
 }
 
-.register__input-section, .login__input-section, .changePassword__input-section, .subject__input-section, .location__input-section {
+.register__input-section, .login__input-section, .changePassword__input-section, .subject__input-section, .location__input-section, .volunteer__input-section {
     position: relative;
     padding: 5px 0;
 }
 
-.register label, .login label, .changePassword span, .subject span, .location span {
+.register label, .login label, .changePassword span, .subject__label, .location__label, .volunteer label {
     position: absolute;
     top: -5px;
     left: 0;
@@ -29,7 +29,7 @@
     font-style: italic;
 }
 
-.register__inp, .login__inp, .changePassword__inp, .subject__inp, .location__inp {
+.register__inp, .login__inp, .changePassword__inp, .subject__inp, .location__inp, .volunteer__inp {
     margin: 10px 0;
     box-sizing: border-box;
     width: 100%;
@@ -61,15 +61,15 @@
     margin-left: 5px;
 }
 
-.register__inp:hover, .login__inp:hover {
+.register__inp:hover, .login__inp:hover, .changePassword__inp:hover, .subject__inp:hover, .location__inp:hover, .volunteer__inp:hover {
     border: 1px solid #000000;
 }
 
-.register__inp:focus, .login__inp:focus {
+.register__inp:focus, .login__inp:focus, .changePassword__inp:focus, .subject__inp:focus, .location__inp:focus, .volunteer__inp:focus {
     border-color: #142850;
 }
 
-.register__submit, .login__submit, .changePassword__submit, .subject__submit, .location__submit {
+.register__submit, .login__submit, .changePassword__submit, .subject__submit, .location__submit, .volunteer__submit {
     width: 100%;
     margin-top: 10px;
     height: 40px;
@@ -81,16 +81,16 @@
     border: 1px solid #0073b1;
 }
 
-.register__submit:active, .login__submit:active, .changePassword__submit:active, .subject__submit:active, .location__submit:active {
+.register__submit:active, .login__submit:active, .changePassword__submit:active, .subject__submit:active, .location__submit:active, .volunteer__submit:active {
     transform: translate(1px, 1px);
 }
 
-.register__submit:focus, .login__submit:focus, .changePassword__submit:focus, .subject__submit:focus, .location__submit:focus {
+.register__submit:focus, .login__submit:focus, .changePassword__submit:focus, .subject__submit:focus, .location__submit:focus, .volunteer__submit:focus {
     border: 1px solid #0073b1;
     box-shadow: none;
 }
 
-.register__submit:hover, .login__submit:hover, .changePassword__submit:hover, .subject__submit:hover, .location__submit:hover {
+.register__submit:hover, .login__submit:hover, .changePassword__submit:hover, .subject__submit:hover, .location__submit:hover, .volunteer__submit:hover {
     cursor: pointer;
     background-color: #006097;
     border: 1px solid #006097;
@@ -113,7 +113,7 @@
     color: #006097;
 }
 
-.register__error, .login__error, .changePassword__error, .subject__error, .location__error {
+.register__error, .login__error, .changePassword__error, .subject__error, .location__error, .volunteer__error {
     position: absolute;
     bottom: -5px;
     right: 0;
@@ -121,7 +121,7 @@
     color: #ff0000;
 }
 
-.register__mainError, .login__mainError, .changePassword__mainError, .subject__mainError, .location__mainError {
+.register__mainError, .login__mainError, .changePassword__mainError, .subject__mainError, .location__mainError, .volunteer__mainError {
     position: absolute;
     top: -5px;
     left: 0;

@@ -24,7 +24,7 @@ const Material = () => {
                             <div className="material__title">{material.title}</div>
                             <div className="material__subject"><span>Subject: </span>{material.subject}</div>
                             <div className="material__video">
-                                <iframe width="560" height="315" src={material.url} frameBorder="0"
+                                <iframe width="560" height="315" src={material.url} frameBorder="0" title={material.title}
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen/>
                             </div>

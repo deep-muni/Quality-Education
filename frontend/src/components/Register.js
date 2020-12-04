@@ -37,9 +37,19 @@ const Register = () => {
                 }
 
                 await Axios.post(urlModifier() + "user/register", User)
-                    .then(res => {
+                    .then( async res => {
                         if (res.data.status) {
                             setResult("User has been registered");
+
+                            if(input.userType === "volunteer"){
+                                const Volunteer = {
+                                    email: input.email,
+                                    fullName: input.firstName + " " + input.lastName
+                                }
+
+                                await Axios.post(urlModifier() + "admin/addvolunteer", Volunteer);
+                            }
+
                             alert("User has been registered");
                             history.push('/login');
                         } else {

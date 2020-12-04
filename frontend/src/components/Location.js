@@ -65,7 +65,7 @@ const Location = () => {
         <div className="location">
             <form className="location__form" onSubmit={handleSubmit}>
                 <div className="location__input-section">
-                    <span htmlFor="location">Select Location</span>
+                    <span className="location__label" htmlFor="location">Select Location</span>
                     <select className="location__inp" onChange={handleChange} name="location">
                         <option value="none" disabled selected>---</option>
                         {

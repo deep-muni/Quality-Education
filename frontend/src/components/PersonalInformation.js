@@ -10,12 +10,13 @@ const PersonalInformation = () => {
     useEffect(() => {
         const fetchData = async () => {
             const data = await Axios.get(urlModifier() + "user/getprofile", {params: {email: window.localStorage.getItem("email")}});
-            console.log(data);
             setUser(data.data.user);
         };
         if (window.localStorage.getItem("userType") === "student") {
             setType(false);
         } else if (window.localStorage.getItem("userType") === "volunteer") {
+            setType(true);
+        } else if (window.localStorage.getItem("userType") === "admin") {
             setType(true);
         }
         document.title = "Personal Information";

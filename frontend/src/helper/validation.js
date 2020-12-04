@@ -67,7 +67,7 @@ export default function validate(input, initial, tag) {
             }
         }
 
-        if (tag === 'subject') {
+        if (tag === 'subject' || tag === 'volunteer') {
             if (!input.subject) {
                 errors.subject = 'Selection is required';
             }
@@ -76,6 +76,18 @@ export default function validate(input, initial, tag) {
         if (tag === 'location') {
             if (!input.location) {
                 errors.location = 'Selection is required';
+            }
+        }
+
+        if (tag === 'volunteer') {
+            if (!input.url) {
+                errors.url = 'URL cannot be empty';
+            }
+        }
+
+        if (tag === 'volunteer') {
+            if (!input.title) {
+                errors.title = 'Title cannot be empty';
             }
         }
 

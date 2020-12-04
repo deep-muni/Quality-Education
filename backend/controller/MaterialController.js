@@ -13,14 +13,6 @@ const addMaterial = async (req, res) => {
             res.json({status: true, message: "Material Added"})
         })
         .catch(error => console.log(error));
-
-    Material.save({email: req.query.email}).then(user => {
-        if (user) {
-            res.json({status: true, user: user});
-        }else{
-            res.json({status: false, message: "Not Found"})
-        }
-    });
 }
 
 const getMaterial = async (req, res) => {

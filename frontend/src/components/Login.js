@@ -31,25 +31,28 @@ const Login = () => {
                     password: input.password
                 }
 
-                await Axios.post(urlModifier() + "user/login", User)
-                    .then(res => {
-                        if (res.data.status) {
-                            setResult("User login successful");
-                            if (res.data.username === 'admin') {
-                                history.push('/admin');
-                            } else {
+                const data = await Axios.get(urlModifier() + "admin/findvolunteer", {params: {email: input.email}})
+
+                if (data.data.status) {
+                    await Axios.post(urlModifier() + "user/login", User)
+                        .then(res => {
+                            if (res.data.status) {
+                                setResult("User login successful");
                                 window.localStorage.setItem("fullName", res.data.fullName);
                                 window.localStorage.setItem("email", res.data.email);
                                 window.localStorage.setItem("userType", res.data.userType);
                                 history.push('/home');
+                            } else {
+                                setResult("Invalid Credentials");
                             }
-                        } else {
-                            setResult("Invalid Credentials");
-                        }
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    })
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        })
+                } else {
+                    setResult("Volunteer is still inactive. Please wait.");
+                }
+
             } else {
                 setResult("Errors in form");
             }
@@ -63,19 +66,19 @@ const Login = () => {
 
     return (
         <div>
-           <Header/>
-           <div className="login">
+            <Header/>
+            <div className="login">
                 <form className="login__form" onSubmit={handleSubmit}>
                     <div className="login__input-section">
                         <label htmlFor="email">Email</label>
                         <input type="text" name="email" className="login__inp"
-                            onChange={handleChange} value={input.email || ''}/>
+                               onChange={handleChange} value={input.email || ''}/>
                         {errors.email && (<span className={"login__error"}>{errors.email}</span>)}
                     </div>
                     <div className="login__input-section">
                         <label htmlFor="password">Password</label>
                         <input type="password" name="password" className="login__inp"
-                            onChange={handleChange} value={input.password || ''}/>
+                               onChange={handleChange} value={input.password || ''}/>
                         {errors.password && (<span className={"login__error"}>{errors.password}</span>)}
                     </div>
                     <div className="login__input-section">

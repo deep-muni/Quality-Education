@@ -2,7 +2,6 @@ import React from 'react';
 import {Route, Switch} from "react-router-dom";
 import Register from "./Register";
 import Login from "./Login";
-import Administrator from "./Administrator";
 import Home from "./Home";
 import Main from "./Main";
 import Scholarship from './Scholarship';
@@ -20,7 +19,6 @@ const Routes = () => {
                 <Route path='/register' component={Register}/>
                 <Route path="/scholarship" component={Scholarship}/>
                 <Route path='/login' component={Login}/>
-                <Route path='/admin' component={Administrator}/>
                 <Route path='/home' component={Home}/>
             </Switch>
         </div>
