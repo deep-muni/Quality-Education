@@ -6,13 +6,15 @@ import Location from "./Location";
 
 const Profile = () => {
 
-    const [type, setType] = useState(Boolean);
     const [section, setSection] = useState("info");
+    const [type, setType] = useState(Boolean);
 
     useEffect(() => {
         if (window.localStorage.getItem("userType") === "student") {
             setType(false);
         } else if (window.localStorage.getItem("userType") === "volunteer") {
+            setType(true);
+        } else if (window.localStorage.getItem("userType") === "admin") {
             setType(true);
         }
     }, [type])

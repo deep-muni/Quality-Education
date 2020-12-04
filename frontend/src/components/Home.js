@@ -5,6 +5,7 @@ import UserHome from "./UserHome";
 import Profile from "./Profile";
 import Material from "./Material";
 import Volunteer from "./Volunteer";
+import Administrator from "./Administrator";
 
 const Home = () => {
 
@@ -19,6 +20,7 @@ const Home = () => {
                     <Route path={`${path}/profile`} component={Profile}/>
                     <Route path={`${path}/material`} component={Material}/>
                     <Route path={`${path}/volunteer`} component={Volunteer}/>
+                    <Route path={`${path}/admin`} component={Administrator}/>
                 </Switch>
             </div>
         </div>

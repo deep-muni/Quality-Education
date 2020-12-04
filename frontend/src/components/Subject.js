@@ -64,7 +64,7 @@ const Subject = () => {
         <div className="subject">
             <form className="subject__form" onSubmit={handleSubmit}>
                 <div className="subject__input-section">
-                    <span htmlFor="subject">Select Subject</span>
+                    <span className="subject__label" htmlFor="subject">Select Subject</span>
                     <select className="subject__inp" onChange={handleChange} name="subject">
                         <option value="none" disabled selected>---</option>
                         {
