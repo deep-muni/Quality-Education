@@ -5,7 +5,7 @@ const app = express();
 
 const userRoute = require('./backend/route/UserRoute');
 const adminRoute = require('./backend/route/adminRoute');
-const materialRoute = require('./backend/route/materialRoute');
+const materialRoute = require('./backend/route/MaterialRoute');
 const db = require('./backend/db/connection');
 
 app.use(express.static(__dirname + '/frontend/build/'));
