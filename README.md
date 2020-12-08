@@ -13,7 +13,7 @@ $ npm install
 $ npm start
 ```
 
-Install the dependencies and devDependencies and start the backend server.
+Install the dependencies and devDependencies and start the frontend.
 
 ```sh
 $ npm install
