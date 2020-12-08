@@ -16,6 +16,7 @@ $ npm start
 Install the dependencies and devDependencies and start the frontend.
 
 ```sh
+$ cd frontend
 $ npm install
 $ npm start
 ```
